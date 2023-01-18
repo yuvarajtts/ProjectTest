@@ -1,23 +1,70 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import {data} from './component/SampleData'
 import './App.css';
+import { Navbar } from 'reactstrap';
 
 function App() {
+
+  const data1 = data;
+ 
   return (
+    <div>
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+    
+      <div className='container' style={{ flexDirection: 'row'}}> 
+      <div>
+        <ul>
+          {data1.map((i) =>( 
+            <div> 
+             
+              <div class="container">
+            <div class="card">
+
+                <div class="slide slide1">
+
+                    <div class="content">
+
+                        <div class="icon">
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="slide slide2">
+
+                    <div class="content">
+
+                        <h3>
+
+                            {i.Product_name}
+
+                        </h3>
+
+                        <p>{i.Product_details}</p>
+
+                    </div>
+
+                </div>
+              
+                
+            </div>
+            </div>
+            
+          
+              </div>
+           
+          ))}
+        </ul>
+      </div>
+      </div>
+    </div>
     </div>
   );
 }
